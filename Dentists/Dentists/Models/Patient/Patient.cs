@@ -9,6 +9,8 @@ namespace Dentists.Models.Patient
     public class Patient
     {
         public string PatientID { get; set; }
+        public string Name { get; set; }
+        public string CreditID { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
         public Address Address { get; set; }

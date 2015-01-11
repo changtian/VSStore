@@ -89,6 +89,9 @@
       <DependentUpon>AllPatientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Patient\AllPatientViewModel.cs" />
+    <Compile Include="View\Patient\NewPatientView.xaml.cs">
+      <DependentUpon>NewPatientView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -129,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Patient\AllPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Patient\NewPatientView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
