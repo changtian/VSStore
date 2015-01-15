@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" x:Class="Dentists.RibbonWindow"
         Title="RibbonWindow">
-    <Grid>
+    <Grid Name="MainWindow">
 
         <DockPanel>
             <dxr:RibbonControl DockPanel.Dock="Top" RibbonStyle="Office2010">
@@ -33,10 +33,10 @@
                             <dxb:BarButtonItem x:Name="biNew" Content="新建" Glyph="{dx:DXImage Image=New_16x16.png}" LargeGlyph="{dx:DXImage Image=New_32x32.png}"/>
                         </dxr:RibbonPageGroup>
                     </dxr:RibbonPage>
-                    <dxr:RibbonPage Caption="基本信息">
+                    <dxr:RibbonPage Caption="基本信息" Name="basicPage">
                         <dxr:RibbonPageGroup Caption="患者">
-                            <dxb:BarButtonItem x:Name="biAllPatients" Content="所有患者" Glyph="{dx:DXImage Image=UserGroup_16x16.png}" ></dxb:BarButtonItem>
-                            <dxb:BarButtonItem x:Name="biNewPatient" Content="添加患者" Glyph="{dx:DXImage Image=Customer_16x16.png}"></dxb:BarButtonItem>
+                            <dxb:BarButtonItem x:Name="biAllPatients" Content="所有患者" Glyph="{dx:DXImage Image=UserGroup_16x16.png}" Command="{Binding ElementName=MainWindow, Path=DataContext.AllPatientsCommand}" ></dxb:BarButtonItem>
+                            <dxb:BarButtonItem x:Name="biNewPatient" Content="添加患者" Glyph="{dx:DXImage Image=Customer_16x16.png}" Command="{Binding ElementName=MainWindow, Path=DataContext.NewPatientCommand}"></dxb:BarButtonItem>
                         </dxr:RibbonPageGroup>
                         <dxr:RibbonPageGroup Caption="药物">
                             <dxb:BarButtonItem x:Name="biAllMedicines" Content="所有药物" Glyph="pack://application:,,,/Dentists;component/Images/Medicine/allmedicines.png"></dxb:BarButtonItem>

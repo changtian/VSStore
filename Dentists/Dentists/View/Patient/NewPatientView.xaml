@@ -39,12 +39,12 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Style="{StaticResource tbStyle}">姓名</TextBlock>
-            <TextBlock Grid.Row="1" Style="{StaticResource tbStyle}">年龄</TextBlock>
-            <TextBlock Grid.Row="2" Style="{StaticResource tbStyle}">性别</TextBlock>
-            <TextBlock Grid.Row="3" Style="{StaticResource tbStyle}">地址</TextBlock>
-            <TextBlock Grid.Row="4" Style="{StaticResource tbStyle}">病种</TextBlock>
-            <TextBlock Grid.Row="5" Style="{StaticResource tbStyle}">身份证</TextBlock>
+            <TextBlock Grid.Row="0" Style="{StaticResource tbStyle}">name</TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource tbStyle}">age</TextBlock>
+            <TextBlock Grid.Row="2" Style="{StaticResource tbStyle}">gender</TextBlock>
+            <TextBlock Grid.Row="3" Style="{StaticResource tbStyle}">address</TextBlock>
+            <TextBlock Grid.Row="4" Style="{StaticResource tbStyle}">disease</TextBlock>
+            <TextBlock Grid.Row="5" Style="{StaticResource tbStyle}">id</TextBlock>
             <TextBox Grid.Row="0" Grid.Column="1" Name="txtName" Text="{Binding Path=Name}"></TextBox>
             <TextBox Grid.Row="1" Grid.Column="1" Name="txtAge" Text="{Binding Path=Age}"></TextBox>
             <TextBox Grid.Row="2" Grid.Column="1" Name="txtGender" Text="{Binding Path=Gender}"></TextBox>
@@ -53,7 +53,7 @@
             <TextBox Grid.Row="5" Grid.Column="1" Name="txtCreditID" Text="{Binding Path=CreditID}"></TextBox>
         </Grid>
         <Grid Name="ActionGrid" Grid.Row="1">
-            <Button Click="Button_Click_1">添加</Button>
+            <Button Click="Button_Click_1">Add</Button>
         </Grid>
     </Grid>
 </UserControl>

@@ -22,4 +22,5 @@ D:\VSworkspace\Dentists\Dentists\bin\Debug\EntityFramework.dll
 D:\VSworkspace\Dentists\Dentists\bin\Debug\EntityFramework.SqlServer.dll
 D:\VSworkspace\Dentists\Dentists\bin\Debug\EntityFramework.xml
 D:\VSworkspace\Dentists\Dentists\bin\Debug\EntityFramework.SqlServer.xml
-D:\VSworkspace\Dentists\Dentists\obj\Debug\Dentists.csprojResolveAssemblyReference.cache
+D:\VSworkspace\Dentists\Dentists\obj\Debug\View\Patient\NewPatientView.baml
+D:\VSworkspace\Dentists\Dentists\obj\Debug\View\Patient\NewPatientView.g.cs

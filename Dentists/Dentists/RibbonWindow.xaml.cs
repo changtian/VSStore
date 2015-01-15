@@ -20,12 +20,23 @@ namespace Dentists
     /// </summary>
     public partial class RibbonWindow : Window
     {
+        private MainViewModel vm = new MainViewModel();
         public RibbonWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
-            //ContentPanel = new AllPatientView();
-            this.ContentPanel.Children.Add(new AllPatientView());
+
+            this.basicPage.DataContext = vm;
+        }
+
+
+
+        void vm_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "CurrentContent")
+            {
+                this.ContentPanel.Children.Clear();
+                this.ContentPanel.Children.Add(((MainViewModel)DataContext).CurrentContent);
+            }
         }
 
         

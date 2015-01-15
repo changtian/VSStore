@@ -77,6 +77,7 @@
     <Compile Include="BasiInfoGrid.xaml.cs">
       <DependentUpon>BasiInfoGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\MainCommands.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Models\Address.cs" />
