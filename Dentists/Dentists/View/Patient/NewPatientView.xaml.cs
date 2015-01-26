@@ -28,9 +28,6 @@ namespace Dentists.View.Patient
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var p = this.DataContext as Dentists.Models.Patient.Patient;
-            var db = new Models.DentistsDataContext();
-            db.Patients.Add(p);
-            db.SaveChanges();
         }
     }
 }

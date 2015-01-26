@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using Dentists.Commands;
 using Dentists.View.Patient;
 
@@ -23,8 +24,8 @@ namespace Dentists
             }
         }
 
-        public RelayCommand NewPatientCommand;
-        public RelayCommand AllPatientsCommand;
+        public ICommand NewPatientCommand;
+        public ICommand AllPatientsCommand;
 
         public event PropertyChangedEventHandler PropertyChanged;
         void RaisePropertyChanged(string propertyName)
