@@ -31,11 +31,8 @@ namespace Dentists
         void RibbonWindow_Loaded(object sender, RoutedEventArgs e)
         {
             vm = new MainViewModel();
-            //this.basicPage.DataContext = vm;
             this.DataContext = vm;
             vm.PropertyChanged += vm_PropertyChanged;
-            this.biAllPatients.Command = vm.AllPatientsCommand;
-            this.biNewPatient.Command = vm.NewPatientCommand;
         }
 
 
