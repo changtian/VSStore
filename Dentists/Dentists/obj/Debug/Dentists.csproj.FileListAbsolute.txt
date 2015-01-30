@@ -46,3 +46,4 @@ D:\VSworkspace\GitHub\VSStore\Dentists\Dentists\obj\Debug\Dentists.g.resources
 D:\VSworkspace\GitHub\VSStore\Dentists\Dentists\obj\Debug\Dentists.Properties.Resources.resources
 D:\VSworkspace\GitHub\VSStore\Dentists\Dentists\obj\Debug\Dentists.csproj.GenerateResource.Cache
 D:\VSworkspace\GitHub\VSStore\Dentists\Dentists\obj\Debug\Dentists.exe.licenses
+D:\VSworkspace\GitHub\VSStore\Dentists\Dentists\obj\Debug\Dentists.csprojResolveAssemblyReference.cache
