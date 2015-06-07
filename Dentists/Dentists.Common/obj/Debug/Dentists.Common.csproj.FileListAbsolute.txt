@@ -1,0 +1,5 @@
+D:\Projects\Github\VSStore\Dentists\Dentists.Common\obj\Debug\Dentists.Common.csprojResolveAssemblyReference.cache
+D:\Projects\Github\VSStore\Dentists\Dentists.Common\bin\Debug\Dentists.Common.dll
+D:\Projects\Github\VSStore\Dentists\Dentists.Common\bin\Debug\Dentists.Common.pdb
+D:\Projects\Github\VSStore\Dentists\Dentists.Common\obj\Debug\Dentists.Common.dll
+D:\Projects\Github\VSStore\Dentists\Dentists.Common\obj\Debug\Dentists.Common.pdb

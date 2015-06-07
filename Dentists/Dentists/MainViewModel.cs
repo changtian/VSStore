@@ -8,47 +8,54 @@ using System.Windows;
 using System.Windows.Input;
 using Dentists.Commands;
 using Dentists.View.Patient;
+using GalaSoft.MvvmLight;
+using System.Windows.Threading;
+using Dentists.Common.Collections;
+using GalaSoft.MvvmLight.Ioc;
+using DevExpress.Xpf.Docking;
+using System.Collections.ObjectModel;
 
 namespace Dentists
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : ViewModelBase
     {
-        private UIElement currentContent = new UIElement();
-        public UIElement CurrentContent
+        private ObservableCollection<DocumentPanel> documents;
+        public ObservableCollection<DocumentPanel> Documents 
         {
-            get { return currentContent; }
+            get {
+                if (documents == null)
+                    documents = new ObservableCollection<DocumentPanel>();
+                return documents;
+            }
             set
             {
-                currentContent = value;
-                RaisePropertyChanged("CurrentContent");
+                Set<ObservableCollection<DocumentPanel>>("Documents", ref documents, value);
             }
         }
 
-        public ICommand NewPatientCommand;
-        public ICommand AllPatientsCommand;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        void RaisePropertyChanged(string propertyName)
+        private int documentsCount;
+        public int DocumentsCount
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            get { return documentsCount; }
+            set { Set<int>("DocumentsCount", ref documentsCount, value); }
         }
 
+        private MainCommands commands = null;
+        public MainCommands Commands
+        {
+            get
+            {
+                if (commands == null)
+                {
+                    SimpleIoc.Default.Register<MainCommands>();
+                    commands = SimpleIoc.Default.GetInstance<MainCommands>();
+                }
+                return commands;
+            }
+        }
+        
         public MainViewModel()
         {
-            NewPatientCommand = new RelayCommand((o) =>
-            {
-                NewPatientView npv = new NewPatientView();
-                CurrentContent = npv as UIElement;
-            }, (o) => { return true; });
-
-            AllPatientsCommand = new RelayCommand((o) =>
-            {
-                AllPatientView apv = new AllPatientView();
-                CurrentContent = apv as UIElement;
-            }, (o) => { return true; });
         }
     }
 }

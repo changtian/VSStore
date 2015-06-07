@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\VSworkspace\GitHub\VSStore\Dentists\Dentists\obj\Debug\
+D:\Projects\Github\VSStore\Dentists\Dentists\obj\Debug\
 Dentists
 none
 false
 DEBUG;TRACE
-D:\VSworkspace\GitHub\VSStore\Dentists\Dentists\App.xaml
+D:\Projects\Github\VSStore\Dentists\Dentists\App.xaml
 4714122764
 11763866029
-21-1375944223
-261099374906
+22521154294
+32-527443305
 BasiInfoGrid.xaml;RibbonWindow.xaml;View\Patient\AllPatientView.xaml;View\Patient\NewPatientView.xaml;
 
 False

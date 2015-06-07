@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Dentists.View.Patient;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace Dentists
 {
@@ -24,27 +25,16 @@ namespace Dentists
         public RibbonWindow()
         {
             InitializeComponent();
-            
+            SimpleIoc.Default.Register<MainViewModel>(() => { return new MainViewModel(); }, Constants.MainViewModelKey, true);
+            vm = SimpleIoc.Default.GetInstance<MainViewModel>(Constants.MainViewModelKey);
             this.Loaded += RibbonWindow_Loaded;
         }
 
         void RibbonWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            vm = new MainViewModel();
             this.DataContext = vm;
-            vm.PropertyChanged += vm_PropertyChanged;
         }
 
-
-
-        void vm_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == "CurrentContent")
-            {
-                this.ContentPanel.Children.Clear();
-                this.ContentPanel.Children.Add(((MainViewModel)DataContext).CurrentContent);
-            }
-        }
 
         
     }
