@@ -104,9 +104,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Address.cs">
-      <DependentUpon>DentistsDBContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -117,28 +114,11 @@
     <Compile Include="Commands\MainCommands.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="DentistsDBContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DentistsDBContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DentistsDBContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DentistsDBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DentistsDBContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DentistsDBContext.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="DataContext\DentistEntities.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Models\Address.cs" />
-    <Compile Include="Models\DBContext.cs" />
+    <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Patient\Patient.cs" />
-    <Compile Include="Patient.cs">
-      <DependentUpon>DentistsDBContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="RibbonWindow.xaml.cs">
       <DependentUpon>RibbonWindow.xaml</DependentUpon>
     </Compile>
@@ -169,23 +149,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DentistsDBContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DentistsDBContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DentistsDBContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DentistsDBContext.edmx</DependentUpon>
-      <LastGenOutput>DentistsDBContext.Context.cs</LastGenOutput>
-    </None>
-    <None Include="DentistsDBContext.edmx.diagram">
-      <DependentUpon>DentistsDBContext.edmx</DependentUpon>
-    </None>
-    <None Include="DentistsDBContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DentistsDBContext.edmx</DependentUpon>
-      <LastGenOutput>DentistsDBContext.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -252,9 +215,6 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DentistsDBContext.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dentists.Common\Dentists.Common.csproj">

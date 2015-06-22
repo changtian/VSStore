@@ -22,12 +22,20 @@ namespace Dentists.View.Patient
         public NewPatientView()
         {
             InitializeComponent();
-            this.DataContext = new Models.Patient.Patient();
+            Models.Patient.Patient person =new Models.Patient.Patient();
+            this.DataContext = person; 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var p = this.DataContext as Dentists.Models.Patient.Patient;
+            Dentists.DataContext.DentistEntities dbContext = new DataContext.DentistEntities();
+            p.PatientID = p.Name.ToString().Length.ToString();
+            p.DoctorID = p.DoctorID + 22;
+            p.AddressID = p.DoctorID + 22;
+            p.DiagnosisDate = DateTime.Now;
+            dbContext.Patients.Add(p);
+            dbContext.SaveChanges();
         }
     }
 }

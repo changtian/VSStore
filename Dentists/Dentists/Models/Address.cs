@@ -8,6 +8,7 @@ namespace Dentists.Models
 {
     public class Address
     {
+        public string AddressID { get; set; }
         public string Province { get; set; }
         public string Citi { get; set; }
         public string District { get; set; }

@@ -2,6 +2,7 @@
 <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DentistsDBContext" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
   <EntityContainer Name="DentistsDBContextContainer" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Patients" EntityType="DentistsDBContext.Patient" />
+    <EntitySet Name="Addresses" EntityType="DentistsDBContext.Address" />
   </EntityContainer>
   <EntityType Name="Patient">
     <Key>
@@ -12,7 +13,16 @@
     <Property Type="String" Name="CreditID" Nullable="false" />
     <Property Type="String" Name="Age" Nullable="false" />
     <Property Type="String" Name="Gender" Nullable="false" />
-    <Property Name="Address" Type="未定义" Nullable="false" />
     <Property Type="String" Name="Disease" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Type="Int32" Name="AddressID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Province" Nullable="false" />
+    <Property Type="String" Name="City" Nullable="false" />
+    <Property Type="String" Name="District" Nullable="false" />
+    <Property Type="String" Name="Detail" Nullable="false" />
   </EntityType>
 </Schema>

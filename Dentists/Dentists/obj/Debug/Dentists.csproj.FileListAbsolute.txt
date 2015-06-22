@@ -59,7 +59,6 @@ D:\Projects\Github\VSStore\Dentists\Dentists\obj\Debug\RibbonWindow.g.cs
 D:\Projects\Github\VSStore\Dentists\Dentists\obj\Debug\View\Patient\AllPatientView.g.cs
 D:\Projects\Github\VSStore\Dentists\Dentists\obj\Debug\View\Patient\NewPatientView.g.cs
 D:\Projects\Github\VSStore\Dentists\Dentists\obj\Debug\App.g.cs
-D:\Projects\Github\VSStore\Dentists\Dentists\obj\Debug\Dentists_Content.g.cs
 D:\Projects\Github\VSStore\Dentists\Dentists\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Projects\Github\VSStore\Dentists\Dentists\obj\Debug\Dentists_MarkupCompile.cache
 D:\Projects\Github\VSStore\Dentists\Dentists\obj\Debug\Dentists_MarkupCompile.lref

@@ -13,7 +13,16 @@ namespace Dentists.Models.Patient
         public string CreditID { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
-        public Address Address { get; set; }
-        public string Disease { get; set; } 
+        public string AddressID { get; set; }
+        public string Disease { get; set; }
+
+        public string CellPhoneNumber { get; set; }
+
+        public string HousePhoneNumber { get; set; }
+
+        public string Diagnosis { get; set; }
+        public DateTime DiagnosisDate { get; set; }
+
+        public string DoctorID { get; set; }
     }
 }

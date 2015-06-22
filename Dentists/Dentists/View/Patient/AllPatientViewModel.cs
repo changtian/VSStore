@@ -8,11 +8,13 @@ namespace Dentists.View.Patient
     public class AllPatientViewModel : ViewModelBase
     {
         List<Dentists.Models.Patient.Patient> AllPatients { get; set; }
+        private DataContext.DentistEntities dbContext;
 
         public AllPatientViewModel()
         {
-            AllPatients = new List<Models.Patient.Patient>();
-            AllPatients.Add(new Models.Patient.Patient { Age = 21, Disease = "ÑÀÌÛ", Gender = "ÄÐ", PatientID = "0" });
+            dbContext = new DataContext.DentistEntities();
+            if (AllPatients == null) AllPatients = new List<Models.Patient.Patient>();
+            
         }
     }
 }

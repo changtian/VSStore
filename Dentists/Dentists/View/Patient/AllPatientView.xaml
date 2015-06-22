@@ -1,4 +1,4 @@
-<UserControl xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  x:Class="Dentists.View.Patient.AllPatientView"
+﻿<UserControl xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  x:Class="Dentists.View.Patient.AllPatientView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -11,18 +11,32 @@
     </UserControl.DataContext>
     <Grid>
         <dxg:GridControl ItemsSource="{Binding Path=AllPatients}">
+            <dxg:GridControl.TotalSummary>
+                <dxg:GridSummaryItem SummaryType="Sum"/>
+            </dxg:GridControl.TotalSummary>
             <dxg:GridControl.View>
-                <dxg:CardView>
-                    <dxg:CardView.CellTemplate>
+                <dxg:TableView x:Name="TVAllPatients">
+                    <dxg:TableView.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <TextBlock>ages</TextBlock>
-                                <TextBox Text="{Binding Path=Age}"></TextBox>
+                                <TextBlock><Run Text="ages"/></TextBlock>
+                                <TextBox Text="{Binding Age}"/>
                             </Grid>
                         </DataTemplate>
-                    </dxg:CardView.CellTemplate>
-                </dxg:CardView>
+                    </dxg:TableView.CellTemplate>
+                </dxg:TableView>
             </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn Header="姓名" HorizontalHeaderContentAlignment="Center" FieldName="Name"></dxg:GridColumn>
+                <dxg:GridColumn Header="性别" HorizontalHeaderContentAlignment="Center" FieldName="Gender"></dxg:GridColumn>
+                <dxg:GridColumn Header="年龄" HorizontalHeaderContentAlignment="Center" FieldName="Age"></dxg:GridColumn>
+                <dxg:GridColumn Header="家庭电话" HorizontalHeaderContentAlignment="Center" FieldName="HousePhoneNumber"></dxg:GridColumn>
+                <dxg:GridColumn Header="手机" HorizontalHeaderContentAlignment="Center" FieldName="CellPhoneNumber"></dxg:GridColumn>
+                <dxg:GridColumn Header="住址" HorizontalHeaderContentAlignment="Center" FieldName="Address"></dxg:GridColumn>
+                <dxg:GridColumn Header="诊断结果" HorizontalHeaderContentAlignment="Center" FieldName="Diagnosis"></dxg:GridColumn>
+                <dxg:GridColumn Header="诊断日期" HorizontalHeaderContentAlignment="Center" FieldName="DiagnosisDate"></dxg:GridColumn>
+                <dxg:GridColumn Header="医师" HorizontalHeaderContentAlignment="Center" FieldName="Doctor"></dxg:GridColumn>
+            </dxg:GridControl.Columns>
         </dxg:GridControl>
     </Grid>
 </UserControl>

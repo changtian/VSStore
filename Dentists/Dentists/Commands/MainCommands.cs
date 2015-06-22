@@ -16,6 +16,17 @@ namespace Dentists.Commands
         {
             vm = SimpleIoc.Default.GetInstance<MainViewModel>(Constants.MainViewModelKey);
             OpenAllPatientViewCmd = new RelayCommand(OpenAllPatientView, CanOpenAllPatientView);
+            OpenNewPatientViewCmd = new RelayCommand(OpenNewPatientView, CanOpenNewPatientView);
+        }
+
+        private void OpenNewPatientView(object obj)
+        {
+            DocumentPanel newPatientPanel = new DocumentPanel();
+            var view = new NewPatientView();
+            newPatientPanel.Caption = "新建患者";
+            newPatientPanel.Content = view;
+            vm.Documents.Add(newPatientPanel);
+            vm.DocumentsCount = vm.Documents.Count;
         }
 
         private bool CanOpenAllPatientView(object obj)
@@ -35,6 +46,8 @@ namespace Dentists.Commands
 
         public RelayCommand OpenAllPatientViewCmd { get; set; }
 
+        public RelayCommand OpenNewPatientViewCmd { get; set; }
 
+        public Predicate<object> CanOpenNewPatientView { get; set; }
     }
 }
