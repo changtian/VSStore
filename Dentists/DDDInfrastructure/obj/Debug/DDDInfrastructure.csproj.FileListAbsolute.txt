@@ -1,0 +1,6 @@
+D:\Projects\Github\VSStore\Dentists\DDDInfrastructure\bin\Debug\DDDInfrastructure.dll
+D:\Projects\Github\VSStore\Dentists\DDDInfrastructure\bin\Debug\DDDInfrastructure.pdb
+D:\Projects\Github\VSStore\Dentists\DDDInfrastructure\bin\Debug\EntityFramework.dll
+D:\Projects\Github\VSStore\Dentists\DDDInfrastructure\bin\Debug\EntityFramework.xml
+D:\Projects\Github\VSStore\Dentists\DDDInfrastructure\obj\Debug\DDDInfrastructure.dll
+D:\Projects\Github\VSStore\Dentists\DDDInfrastructure\obj\Debug\DDDInfrastructure.pdb
