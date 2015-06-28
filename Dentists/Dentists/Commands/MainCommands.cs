@@ -1,5 +1,6 @@
 ﻿using Dentists.View.Patient;
 using DevExpress.Xpf.Docking;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
 using System;
 using System.Collections.Generic;
@@ -15,39 +16,33 @@ namespace Dentists.Commands
         public MainCommands()
         {
             vm = SimpleIoc.Default.GetInstance<MainViewModel>(Constants.MainViewModelKey);
-            OpenAllPatientViewCmd = new RelayCommand(OpenAllPatientView, CanOpenAllPatientView);
-            OpenNewPatientViewCmd = new RelayCommand(OpenNewPatientView, CanOpenNewPatientView);
+            OpenDocCmd = new RelayCommand<string>((s) => { OpenDocument(s); });
+            CloseDocCmd = new RelayCommand(CloseDocument, CanCloseDocument);
         }
 
-        private void OpenNewPatientView(object obj)
-        {
-            DocumentPanel newPatientPanel = new DocumentPanel();
-            var view = new NewPatientView();
-            newPatientPanel.Caption = "新建患者";
-            newPatientPanel.Content = view;
-            vm.Documents.Add(newPatientPanel);
-            vm.DocumentsCount = vm.Documents.Count;
-        }
-
-        private bool CanOpenAllPatientView(object obj)
+        private bool CanCloseDocument(object obj)
         {
             return true;
         }
 
-        private void OpenAllPatientView(object obj)
+        private void CloseDocument(object obj)
         {
-            DocumentPanel allPatientPanel = new DocumentPanel();
-            var view = new AllPatientView();
-            allPatientPanel.Caption = "所有患者";
-            allPatientPanel.Content = view;
-            vm.Documents.Add(allPatientPanel);
-            vm.DocumentsCount = vm.Documents.Count;
+            vm.Documents.Remove(obj as DocumentPanel);
         }
 
-        public RelayCommand OpenAllPatientViewCmd { get; set; }
+        private void OpenDocument(string caption)
+        {
+            DocumentPanel newPatientPanel = new DocumentPanel();
+            var view = CustomizedViewFactory.Instance.GetCustomizedView(caption);
+            newPatientPanel.Caption = caption;
+            newPatientPanel.Content = view;
+            vm.Documents.Add(newPatientPanel);
+            vm.DocumentsCount = vm.Documents.Count;
+            newPatientPanel.IsActive = true;
+            newPatientPanel.CloseCommand = CloseDocCmd;
+        }
 
-        public RelayCommand OpenNewPatientViewCmd { get; set; }
-
-        public Predicate<object> CanOpenNewPatientView { get; set; }
+        public RelayCommand<string> OpenDocCmd { get; set; }
+        public RelayCommand CloseDocCmd { get; set; }
     }
 }

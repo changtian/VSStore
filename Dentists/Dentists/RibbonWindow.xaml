@@ -35,8 +35,8 @@
                     </dxr:RibbonPage>
                     <dxr:RibbonPage Caption="基本信息" x:Name="basicPage">
                         <dxr:RibbonPageGroup Caption="患者">
-                            <dxb:BarButtonItem x:Name="biAllPatients" Content="所有患者" Command="{Binding Commands.OpenAllPatientViewCmd}"  Glyph="{dx:DXImage Image=UserGroup_16x16.png}" />
-                            <dxb:BarButtonItem x:Name="biNewPatient" Content="添加患者" Command="{Binding Commands.OpenNewPatientViewCmd}" Glyph="{dx:DXImage Image=Customer_16x16.png}"/>
+                            <dxb:BarButtonItem x:Name="biAllPatients" Content="所有患者" Command="{Binding Commands.OpenDocCmd}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self},Path=Content}" Glyph="{dx:DXImage Image=UserGroup_16x16.png}" />
+                            <dxb:BarButtonItem x:Name="biNewPatient" Content="添加患者" Command="{Binding Commands.OpenDocCmd}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self},Path=Content}" Glyph="{dx:DXImage Image=Customer_16x16.png}"/>
                         </dxr:RibbonPageGroup>
                         <dxr:RibbonPageGroup Caption="药物">
                             <dxb:BarButtonItem x:Name="biAllMedicines" Content="所有药物" Glyph="pack://application:,,,/Dentists;component/Images/Medicine/allmedicines.png"/>
@@ -66,7 +66,8 @@
             <Grid x:Name="ContentPanel">
                 <dxdo:DockLayoutManager>
                     <dxdo:LayoutGroup>
-                        <dxdo:DocumentGroup Name="Documents" ItemsSource="{Binding Path=Documents}">
+                        <dxdo:DocumentGroup Name="Documents" ItemsSource="{Binding Path=Documents}" AllowClose="True" ClosePageButtonShowMode="InActiveTabPageHeader">
+                            
                         </dxdo:DocumentGroup>
                     </dxdo:LayoutGroup>
                 </dxdo:DockLayoutManager>
