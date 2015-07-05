@@ -139,4 +139,13 @@ namespace DDDInfrastructure
         void Update(TAggregateRoot aggregateRoot);
 
     }
+    /// <summary>
+    /// Represents that the implemented classes are repositories.
+    /// </summary>
+    /// <typeparam name="TAggregateRoot">The type of the aggregate root.</typeparam>
+    public interface IRepository<TAggregateRoot> : IRepository<Guid, TAggregateRoot>
+        where TAggregateRoot : class, IAggregateRoot
+    {
+
+    }
 }
