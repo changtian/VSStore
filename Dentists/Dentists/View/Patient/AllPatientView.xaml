@@ -6,24 +6,13 @@
              xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:ViewModels="clr-namespace:Dentists.View.Patient"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <UserControl.DataContext>
-        <ViewModels:AllPatientViewModel/>
-    </UserControl.DataContext>
     <Grid>
-        <dxg:GridControl ItemsSource="{Binding Path=AllPatients}">
+        <dxg:GridControl Name="GCAllPatients">
             <dxg:GridControl.TotalSummary>
                 <dxg:GridSummaryItem SummaryType="Sum"/>
             </dxg:GridControl.TotalSummary>
             <dxg:GridControl.View>
                 <dxg:TableView x:Name="TVAllPatients">
-                    <dxg:TableView.CellTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <TextBlock><Run Text="ages"/></TextBlock>
-                                <TextBox Text="{Binding Age}"/>
-                            </Grid>
-                        </DataTemplate>
-                    </dxg:TableView.CellTemplate>
                 </dxg:TableView>
             </dxg:GridControl.View>
             <dxg:GridControl.Columns>

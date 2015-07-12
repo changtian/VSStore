@@ -16,5 +16,7 @@ namespace Dentists.DataContext
         public DbSet<Patient> Patients { get; set; }
 
         public DbSet<Address> Addresses { get; set; }
+
+        public DbSet<Doctor> Doctors { get; set; }
     }
 }

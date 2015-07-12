@@ -9,5 +9,6 @@ namespace Dentists
     {
 
         public const string MainViewModelKey = "MainViewModel";
+        public const string RepositoryContext = "RepositoryContext";
     }
 }

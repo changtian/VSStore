@@ -21,8 +21,11 @@ namespace Dentists.View.Patient
     {
         public AllPatientView()
         {
+            AllPatientViewModel vm = new AllPatientViewModel();
             InitializeComponent();
-            DataContext = new AllPatientViewModel();
+            DataContext = vm;
+            this.GCAllPatients.ItemsSource = vm.AllPatients;
         }
+
     }
 }

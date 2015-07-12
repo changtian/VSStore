@@ -30,9 +30,6 @@ namespace Dentists.View.Patient
         {
             var p = this.DataContext as Dentists.Models.Patient.Patient;
             Dentists.DataContext.DentistEntities dbContext = new DataContext.DentistEntities();
-            p.PatientID = p.Name.ToString().Length.ToString();
-            p.DoctorID = p.DoctorID + 22;
-            p.AddressID = p.DoctorID + 22;
             p.DiagnosisDate = DateTime.Now;
             dbContext.Patients.Add(p);
             dbContext.SaveChanges();

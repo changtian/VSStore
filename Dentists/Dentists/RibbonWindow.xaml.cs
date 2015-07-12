@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Dentists.View.Patient;
 using GalaSoft.MvvmLight.Ioc;
+using DDDInfrastructure;
 
 namespace Dentists
 {
@@ -26,6 +27,7 @@ namespace Dentists
         {
             InitializeComponent();
             SimpleIoc.Default.Register<MainViewModel>(() => { return new MainViewModel(); }, Constants.MainViewModelKey, true);
+            SimpleIoc.Default.Register< IRepositoryContext>(() => { return new EntityFrameworkRepositoryContext(new DataContext.DentistEntities()); }, Constants.RepositoryContext, true);
             vm = SimpleIoc.Default.GetInstance<MainViewModel>(Constants.MainViewModelKey);
             this.Loaded += RibbonWindow_Loaded;
         }

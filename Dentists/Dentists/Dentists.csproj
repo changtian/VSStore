@@ -117,6 +117,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="DataContext\DentistEntities.cs" />
     <Compile Include="MainViewModel.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Patient\Patient.cs" />
@@ -218,6 +219,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DDDInfrastructure\DDDInfrastructure.csproj">
+      <Project>{e43330eb-4c31-4e73-8f22-688db3dd23a0}</Project>
+      <Name>DDDInfrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dentists.Common\Dentists.Common.csproj">
       <Project>{34d498a9-d82f-4d61-aacd-08c248a86636}</Project>
       <Name>Dentists.Common</Name>

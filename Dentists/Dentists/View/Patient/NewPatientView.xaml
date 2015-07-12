@@ -1,10 +1,10 @@
-<UserControl x:Class="Dentists.View.Patient.NewPatientView"
+﻿<UserControl x:Class="Dentists.View.Patient.NewPatientView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="500" d:DesignWidth="500">
     <UserControl.Resources>
         <Style x:Key="inputtxtStyle" TargetType="TextBox">
             <Style.Setters>
@@ -18,6 +18,7 @@
             <Style.Setters>
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="Red"/>
             </Style.Setters>
         </Style>
     </UserControl.Resources>
@@ -30,30 +31,47 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Style="{StaticResource tbStyle}">name</TextBlock>
-            <TextBlock Grid.Row="1" Style="{StaticResource tbStyle}">age</TextBlock>
-            <TextBlock Grid.Row="2" Style="{StaticResource tbStyle}">gender</TextBlock>
-            <TextBlock Grid.Row="3" Style="{StaticResource tbStyle}">address</TextBlock>
-            <TextBlock Grid.Row="4" Style="{StaticResource tbStyle}">disease</TextBlock>
-            <TextBlock Grid.Row="5" Style="{StaticResource tbStyle}">id</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource tbStyle}">姓名</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource tbStyle}">身份证号码</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="4" Style="{StaticResource tbStyle}">性别</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="6" Style="{StaticResource tbStyle}">年龄</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource tbStyle}">手机</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource tbStyle}">家庭电话</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="4" Style="{StaticResource tbStyle}">地址</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource tbStyle}">诊断日期</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource tbStyle}">症状</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="4" Style="{StaticResource tbStyle}">诊断结果</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="6" Style="{StaticResource tbStyle}">主治医师</TextBlock>
+            
             <TextBox Grid.Row="0" Grid.Column="1" Name="txtName" Text="{Binding Path=Name}"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" Name="txtAge" Text="{Binding Path=Age}"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" Name="txtGender" Text="{Binding Path=Gender}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Name="txtAddress" Text="{Binding Path=Address}"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Name="txtDisease" Text="{Binding Path=Disease}"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="1" Name="txtCreditID" Text="{Binding Path=CreditID}"></TextBox>
+            <TextBox Grid.Row="0" Grid.Column="3" Name="txtCreditID" Text="{Binding Path=CreditID}"></TextBox>
+            <TextBox Grid.Row="0" Grid.Column="5" Name="txtGender" Text="{Binding Path=Gender}"></TextBox>
+            <TextBox Grid.Row="0" Grid.Column="7" Name="txtAge" Text="{Binding Path=Age}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="txtCellPhoneNumber" Text="{Binding Path=CellPhoneNumber}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="3" Name="txtHousePhoneNumber" Text="{Binding Path=HousePhoneNumber}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="3" Name="txtAddress" Text="{Binding Path=Address}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="txtDiagnosisDate" Text="{Binding Path=DiagnosisDate}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="3" Name="txtSymptom" Text="{Binding Path=Symptom}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="5" Name="txtDisease" Text="{Binding Path=Disease}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="7" Name="txtDoctorID" Text="{Binding Path=DoctorID}"></TextBox>
         </Grid>
         <Grid Name="ActionGrid" Grid.Row="1">
-            <Button Click="Button_Click_1">Add</Button>
+            <StackPanel HorizontalAlignment="Right">
+                <Button Width="50" Click="Button_Click_1" Margin="0,5,5,0">新增</Button>
+            </StackPanel>
+            
         </Grid>
     </Grid>
 </UserControl>
