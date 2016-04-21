@@ -3,7 +3,6 @@ Thumbs.db
 ehthumbs.db
 .ldf
 .mdf
-bin/
 bin/*
 obj/*
 
@@ -47,4 +46,3 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.pdb
-*.ldf
